@@ -2,18 +2,13 @@ package com.team3.campus;
 
 public class DuesService {
     public String getMemberLine(int number, int share, int remainder) {
-        if (remainder > 0) {
-            if (number == 1) {
-                return String.format("%d번(총무) : %d원", number, (share + remainder));
-            } else {
-                return String.format("%d번 : %d원", number, share);
-            }
+        int totalShare = share + remainder;
+        if (number == 1 && remainder > 0) {
+            return number + "번(총무) : " + totalShare + "원";
+        } else if (number == 1) {
+            return number + "번(총무) : " + share + "원";
         } else {
-            if (number == 1) {
-                return String.format("%d번(총무) : %d원", number, share);
-            } else {
-                return String.format("%d번 : %d원", number, share);
-            }
+            return number + "번 :" + share + "원";
         }
     }
 
