@@ -1,3 +1,12 @@
+---
+name: feature
+about: Describe this issue template's purpose here.
+title: ''
+labels: ''
+assignees: ''
+
+---
+
 ## 추적한 메뉴
   메뉴 (번호) (기능 이름) · 담당 @github아이디
 
