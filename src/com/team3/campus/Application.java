@@ -8,13 +8,23 @@ public class Application {
         int menu;
         do {
             System.out.println("===== 대학생활 계산기 =====");
-            // (1) 각자 자기 메뉴 한 줄 추가
+            System.out.println("4. 동아리 회비 정산");
             System.out.println("0. 종료");
             System.out.print("메뉴 선택 : ");
             menu = sc.nextInt();
 
             switch (menu) {
-                // (2) 각자 자기 case 블록 추가
+                case 4: {
+                    System.out.print("행사 총비용 : ");
+                    int tprice = sc.nextInt();
+
+                    System.out.print("참석 인원 : ");
+                    int pcount = sc.nextInt();
+
+                    DuesService ds = new DuesService();
+                    ds.printSettlement(tprice, pcount);
+                    break;
+                }
                 case 0:
                     System.out.println("계산기를 종료합니다.");
                     break;
