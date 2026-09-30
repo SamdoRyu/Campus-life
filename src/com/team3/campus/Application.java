@@ -10,15 +10,18 @@ public class Application {
             System.out.println("===== 대학생활 계산기 =====");
             System.out.println("1. 알바 급여");
             System.out.println("3. 통학 교통비");
+            System.out.println("4. 동아리 회비 정산");
             System.out.println("0. 종료");
             System.out.print("메뉴 선택 : ");
             menu = sc.nextInt();
-
+          
             switch (menu) {               
-                case 0:
+
+                case 0: {
                     System.out.println("계산기를 종료합니다.");
                     break;
-                case 1:
+                }
+                case 1: {
                     System.out.print("시급 : ");
                     int hourWage = sc.nextInt();
                     System.out.print("이번 주 근무 시간 : ");
@@ -27,7 +30,8 @@ public class Application {
                     WageService money = new WageService();
                     System.out.println(money.makePayslip(hourWage, hours));
                     break;
-                case 3:
+                }
+                case 3: {
                     System.out.print("편도 요금 : ");
                     int oneWayFare = sc.nextInt();
                     System.out.print("한 달 등교일 : ");
@@ -37,6 +41,18 @@ public class Application {
                     CommuteService commuteService = new CommuteService();
                     System.out.println(commuteService.recommend(oneWayFare, days, passPrice));
                     break;
+                }
+                case 4: {
+                    System.out.print("행사 총비용 : ");
+                    int tprice = sc.nextInt();
+
+                    System.out.print("참석 인원 : ");
+                    int pcount = sc.nextInt();
+
+                    DuesService ds = new DuesService();
+                    ds.printSettlement(tprice, pcount);
+                    break;
+                }
                 default:
                     System.out.println("없는 메뉴입니다. 다시 선택하세요.");
             }
