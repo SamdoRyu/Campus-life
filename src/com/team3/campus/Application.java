@@ -27,6 +27,23 @@ public class Application {
                     WageService money = new WageService();
                     System.out.println(money.makePayslip(hourWage, hours));
                     break;
+                case 2:
+                    int score1;
+                    int score2;
+                    int score3;
+
+                    System.out.println("과목 1 점수:");
+                    score1= sc.nextInt();
+                    System.out.println("과목 2 점수:");
+                    score2= sc.nextInt();
+                    System.out.println("과목 3 점수:");
+                    score3=sc.nextInt();
+
+                    GradeService grad = new GradeService();
+                    String report = grad.makeReport(score1, score2, score3);
+
+                    System.out.println(report);
+                    break;
                 case 3:
                     System.out.print("편도 요금 : ");
                     int oneWayFare = sc.nextInt();
