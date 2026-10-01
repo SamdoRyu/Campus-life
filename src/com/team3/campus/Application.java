@@ -9,6 +9,7 @@ public class Application {
         do {
             System.out.println("===== 대학생활 계산기 =====");
             System.out.println("1. 알바 급여");
+            System.out.println("2. 학점 계산");
             System.out.println("3. 통학 교통비");
             System.out.println("4. 동아리 회비 정산");
             System.out.println("0. 종료");
@@ -30,6 +31,24 @@ public class Application {
 
                     WageService money = new WageService();
                     System.out.println(money.makePayslip(hourWage, hours));
+                    break;
+                }
+                case 2: {
+                    int score1;
+                    int score2;
+                    int score3;
+
+                    System.out.println("과목 1 점수:");
+                    score1= sc.nextInt();
+                    System.out.println("과목 2 점수:");
+                    score2= sc.nextInt();
+                    System.out.println("과목 3 점수:");
+                    score3=sc.nextInt();
+
+                    GradeService grad = new GradeService();
+                    String report = grad.makeReport(score1, score2, score3);
+
+                    System.out.println(report);
                     break;
                 }
                 case 3: {
@@ -56,24 +75,6 @@ public class Application {
                 }
                 default:
                     System.out.println("없는 메뉴입니다. 다시 선택하세요.");
-
-                case 2:
-                    int score1;
-                    int score2;
-                    int score3;
-
-                    System.out.println("과목 1 점수:");
-                    score1= sc.nextInt();
-                    System.out.println("과목 2 점수:");
-                    score2= sc.nextInt();
-                    System.out.println("과목 3 점수:");
-                    score3=sc.nextInt();
-
-                    GradeService grad = new GradeService();
-                    String report = grad.makeReport(score1, score2, score3);
-
-                    System.out.println(report);
-                    break;
                     }
             System.out.println();
         } while (menu != 0);
