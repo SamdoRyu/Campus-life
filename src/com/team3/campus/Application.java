@@ -15,8 +15,8 @@ public class Application {
             System.out.println("2. 학점 계산");
             System.out.print("메뉴 선택 : ");
             menu = sc.nextInt();
-          
-            switch (menu) {               
+
+            switch (menu) {
 
                 case 0: {
                     System.out.println("계산기를 종료합니다.");
@@ -74,7 +74,7 @@ public class Application {
 
                     System.out.println(report);
                     break;
-                    }
+            }
             System.out.println();
         } while (menu != 0);
     }
